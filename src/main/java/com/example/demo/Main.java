@@ -54,9 +54,7 @@ public class Main {
            return new ApiInfoBuilder()
                    .title("swagger-bootstrap-ui RESTful APIs")
                    .description("swagger-bootstrap-ui")
-                   .termsOfServiceUrl("http://localhost:7001/")
-                   .license("http://localhost:7001/")
-                   .licenseUrl("http://localhost:7001/")
+                   .termsOfServiceUrl("http://localhost:5050/")
                 //    .contact("developer@mail.com")
                    .version("1.0")
                    .build();
