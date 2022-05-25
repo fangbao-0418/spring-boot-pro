@@ -15,6 +15,11 @@ public class User {
 
     private String email;
 
+    // User() {
+    //     this.name = "";
+    //     this.email = "";
+    // }
+
     public Integer getId() {
         return id;
     }

@@ -2,8 +2,8 @@ package com.example.demo.Utils;
 
 public class ResultUtil {
 
-    public static Result success(Object object) {
-        Result result = new Result();
+    public static <T, P> Result<T> success(T object) {
+        Result<T> result = new Result<>();
         result.setCode(0);
         result.setMsg("成功");
         result.setData(object);

@@ -36,7 +36,7 @@ public class Main {
 //						.allowedHeaders("header1", "header2", "header3")
 //						.exposedHeaders("header1", "header2")
 //						.allowCredentials(false).maxAge(3600)
-                        .allowedOrigins("http://localhost:8080");
+                        .allowedOrigins("http://localhost:8081");
             }
         };
     }

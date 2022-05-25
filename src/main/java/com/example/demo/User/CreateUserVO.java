@@ -14,6 +14,9 @@ public class CreateUserVO {
     @ApiModelProperty("姓名")
     public String name;
  
+    @ApiModelProperty("emial")
+    public String email;
+ 
     @ApiModelProperty("性别")
     public Integer gender;
  
