@@ -15,14 +15,36 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 // @SpringBootApplication
 public class UserApplication {
-	// @Autowired
-	// private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
 	@Autowired
 	private ContractRepository contractRepository;
 
-	@GetMapping(path="/api/create/user")
-	public String createUser(HttpServletRequest request) throws UnknownHostException {
+	@PostMapping(path="/api/create/user")
+	public Result<User> createUser(@RequestBody CreateUserVO body) {
+
+		User u = new User();
+		u.setName(body.name);
+		u.setEmail(body.email);
+		userRepository.save(u);
+
+		return ResultUtil.success(u);
+	}
+
+	@PostMapping(path="/api/create/contact")
+	public Result<Contract> createContact(@RequestBody CreateUserVO body) {
+
+		Contract u = new Contract();
+		u.setName(body.name);
+		// u.setEmail(body.email);
+		contractRepository.save(u);
+
+		return ResultUtil.success(u);
+	}
+
+	@GetMapping(path="/api/get/ip")
+	public String getIp(HttpServletRequest request) throws UnknownHostException {
 		// String ipAddress = request.getHeader("x-forwarded-for");
 		String ipAddress = request.getHeader("WL-Proxy-Client-IP");
 		String ipAddress2 = request.getHeader("Proxy-Client-IP");
@@ -42,6 +64,7 @@ public class UserApplication {
 
 		// return ResultUtil.success(u);
 	}
+
 
 	@GetMapping(path="/api/get/user")
 	Result<String> getUser(@RequestParam String id) {
